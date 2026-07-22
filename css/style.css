@@ -202,6 +202,31 @@
   .form .btn-primary:hover{background:var(--wood); color:var(--pine-deep); box-shadow:none;}
   .form-note{font-size:11.5px; color:rgba(244,241,236,0.5); margin-top:-4px;}
 
+  /* ---------- equipo (página independiente, acordeón) ---------- */
+  .team-page-hero{padding:180px 0 60px;}
+  .team-page-hero .section-head{margin-bottom:0;}
+  .accordion{display:flex; flex-direction:column; gap:18px;}
+  .acc-item{background:var(--bg-card); border:1px solid var(--line); border-radius:20px; overflow:hidden; transition:box-shadow .35s ease;}
+  .acc-item.open{box-shadow:0 26px 50px -30px rgba(54,54,54,0.25);}
+  .acc-head{display:flex; align-items:center; gap:20px; padding:26px 32px; cursor:pointer; background:none; border:none; width:100%; text-align:left; font-family:'Inter',sans-serif;}
+  .acc-head .team-initials{margin-bottom:0; flex:none;}
+  .acc-head-text{flex:1;}
+  .acc-head-text .team-role{margin-bottom:4px;}
+  .acc-head-text h3{font-size:19px; font-weight:500;}
+  .acc-toggle{width:30px; height:30px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex:none; transition:transform .4s cubic-bezier(.16,1,.3,1), background .3s ease;}
+  .acc-toggle svg{transition:transform .4s ease;}
+  .acc-item.open .acc-toggle{background:var(--pine-deep); border-color:var(--pine-deep);}
+  .acc-item.open .acc-toggle svg{transform:rotate(45deg);}
+  .acc-item.open .acc-toggle svg path{stroke:#fff;}
+  .acc-body{max-height:0; overflow:hidden; transition:max-height .5s cubic-bezier(.16,1,.3,1);}
+  .acc-body-inner{padding:0 32px 30px 32px; display:flex; flex-direction:column; gap:18px;}
+  .acc-body-inner p{font-size:14.5px; color:var(--ink); line-height:1.7; max-width:640px;}
+  .acc-body-inner ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .acc-body-inner li{font-size:14px; color:var(--ink); line-height:1.55; padding-left:16px; position:relative;}
+  .acc-body-inner li::before{content:'—'; position:absolute; left:0; color:var(--clay);}
+  .team-cta{text-align:center; margin-top:64px;}
+  .team-cta p{color:var(--ink-soft); font-size:15px; margin-bottom:22px;}
+
   footer{padding:60px 0 34px;}
   .foot-grid{display:flex; justify-content:space-between; align-items:center; padding-bottom:36px; margin-bottom:28px; border-bottom:1px solid var(--line); flex-wrap:wrap; gap:20px;}
   .foot-links{display:flex; gap:30px; font-size:13.5px; color:var(--ink-soft); flex-wrap:wrap;}

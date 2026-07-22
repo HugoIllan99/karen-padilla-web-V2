@@ -16,3 +16,31 @@ const header = document.getElementById('siteHeader');
     el.style.transitionDelay = (i % 4) * 0.07 + 's';
     observer.observe(el);
   });
+
+  // Acordeón de especialidades (equipo.html)
+  document.querySelectorAll('.acc-item.open .acc-body').forEach(body => {
+    body.style.maxHeight = body.scrollHeight + 'px';
+  });
+
+  document.querySelectorAll('.acc-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const item = head.closest('.acc-item');
+      const body = item.querySelector('.acc-body');
+      const isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.acc-item.open').forEach(openItem => {
+        if(openItem !== item){
+          openItem.classList.remove('open');
+          openItem.querySelector('.acc-body').style.maxHeight = null;
+        }
+      });
+
+      if(isOpen){
+        item.classList.remove('open');
+        body.style.maxHeight = null;
+      } else {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
